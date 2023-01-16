@@ -1,0 +1,35 @@
+#+TITLE: Execute Kusto queries from Emacs org babel
+
+* Introduction
+
+=ob-kusto= allows to execute Kusto queries from org babel using [[https://learn.microsoft.com/en-us/azure/data-explorer/kusto/tools/kusto-cli][Kusto Cli tool]].
+
+** TODO screenshot
+
+* Quick Start
+
+Make sure =Kusto.Cli.exe= is installed and can be found in system
+path, or set =kusto-cli-command-location= to use a custom path.
+
+Clone this repo:
+
+#+BEGIN_SRC shell
+git clone https://github.com/chen-chao/ob-kusto /path/to/ob-kusto
+#+END_SRC
+
+Load =ob-kusto= in Emacs:
+
+#+BEGIN_SRC elisp
+  (use-package org
+    :config
+    ;; other settings...
+
+    (use-package ob-kusto
+      :load-path /path/to/ob-kusto
+      :config
+      (add-to-list 'org-babel-load-languages '(kusto . t)))
+#+END_SRC
+
+* Contribution
+
+Issues and contricutions are welcome.
